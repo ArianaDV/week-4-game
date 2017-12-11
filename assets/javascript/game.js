@@ -6,22 +6,33 @@ var diamondValue;
 var emeraldValue;
 var yellowStoneValue;
 
+var firstClick;
+var secondClick;
 
-var combination = [] ;
-var totalSum;
+
+var targetNum;
+
+var totalSum = 0; 
 
 
+
+
+
+//Displays target number
 
 $("button").on("click", function() {
 
-var computerChoiceGuess = Math.floor(Math.random() * 1000) + 1 ;
+	targetNum = Math.floor(Math.random() * 1000) + 1 ;
 
-$("#randomNum").text(computerChoiceGuess);
+$("#randomNum").text(targetNum);
+
 
 console.log("Hey!");
 
 
 });
+
+
 
 var computerChoiceRuby = Math.floor(Math.random() * 1000) + 1 ;
 
@@ -38,9 +49,22 @@ $("#ruby").on("click", function() {
 
 	$("#sumNum").text(rubyValue);
 
-		
+	if (totalSum = 0) {
+
+		firstClick = rubyValue;
+
+	}
+
+	else {
+		totalSum = firstClick + rubyValue;
+	}
+
+	
 }
 );
+
+
+
 
 
 $("#diamond").on("click", function() {
