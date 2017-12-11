@@ -2,3 +2,19 @@ img {
 
 	width: 60px;
 }
+
+button {
+
+	margin-top: 10px;
+}
+
+#randomNum {
+
+	border-style: solid;
+
+	margin-top: 10px;
+
+	width: 10%;
+
+	text-align: center;
+}

@@ -32,7 +32,7 @@ console.log("Hey!");
 
 });
 
-
+//Assigns random values to crystals
 
 var computerChoiceRuby = Math.floor(Math.random() * 1000) + 1 ;
 
