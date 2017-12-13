@@ -6,10 +6,6 @@ var diamondValue;
 var emeraldValue;
 var yellowStoneValue;
 
-var firstClick;
-var secondClick;
-
-
 var targetNum;
 
 var totalSum = 0; 
@@ -17,49 +13,46 @@ var totalSum = 0;
 
 
 
-
 //Displays target number
 
-$("button").on("click", function() {
-
-	targetNum = Math.floor(Math.random() * 1000) + 1 ;
+targetNum = Math.floor(Math.random() * 100) + 1 ;
 
 $("#randomNum").text(targetNum);
 
 
-console.log("Hey!");
-
-
-});
 
 //Assigns random values to crystals
 
-var computerChoiceRuby = Math.floor(Math.random() * 1000) + 1 ;
+var computerChoiceRuby = Math.floor(Math.random() * 10) + 1 ;
 
-var computerChoiceDiamond = Math.floor(Math.random() * 1000) + 1 ;
+var computerChoiceDiamond = Math.floor(Math.random() * 10) + 1 ;
 
-var computerChoiceEmerald = Math.floor(Math.random() * 1000) + 1 ;
+var computerChoiceEmerald = Math.floor(Math.random() * 10) + 1 ;
 
-var computerChoiceYellowStone = Math.floor(Math.random() * 1000) + 1 ;
+var computerChoiceYellowStone = Math.floor(Math.random() * 10) + 1 ;
 
 
 $("#ruby").on("click", function() {
 
-	rubyValue=computerChoiceRuby;
+	rubyValue= parseInt(computerChoiceRuby) ;
 
-	$("#sumNum").text(rubyValue);
+	totalSum += rubyValue;
 
-	if (totalSum = 0) {
+	$("#sumNum").text(totalSum);
 
-		firstClick = rubyValue;
-
-	}
-
-	else {
-		totalSum = firstClick + rubyValue;
-	}
-
+	if ( totalSum === targetNum) {
+	win ++;
+	$("#score").text("Wins:" + win) ;
 	
+}
+
+else if ( totalSum >= targetNum) {
+
+	lose ++;
+
+	$("#score").text("Losses:" + lose) ;
+}
+
 }
 );
 
@@ -69,9 +62,24 @@ $("#ruby").on("click", function() {
 
 $("#diamond").on("click", function() {
 
-	diamondValue=computerChoiceDiamond;
+	diamondValue = parseInt(computerChoiceDiamond) ;
 
-	$("#sumNum").text(diamondValue);
+	totalSum += diamondValue;
+
+	$("#sumNum").text(totalSum);
+
+	if ( totalSum === targetNum) {
+	win ++;
+	$("#score").text("Wins:" + win) ;
+	
+}
+
+else if ( totalSum >= targetNum) {
+
+	lose ++;
+
+	$("#score").text("Losses:" + lose) ;
+}
 
 }
 );
@@ -79,9 +87,24 @@ $("#diamond").on("click", function() {
 
 $("#emerald").on("click", function() {
 
-	emeraldValue=computerChoiceEmerald;
+	emeraldValue = parseInt(computerChoiceEmerald) ;
 
-	$("#sumNum").text(emeraldValue);
+	totalSum += emeraldValue;
+
+	$("#sumNum").text(totalSum);
+
+	if ( totalSum === targetNum) {
+	win ++;
+	$("#score").text("Wins:" + win) ;
+	
+}
+
+else if ( totalSum >= targetNum) {
+
+	lose ++;
+
+	$("#score").text("Losses:" + lose) ;
+}
 
 }
 );
@@ -89,10 +112,31 @@ $("#emerald").on("click", function() {
 
 $("#yellowStone").on("click", function() {
 
-	yellowStoneValue=computerChoiceYellowStone;
+	yellowStoneValue = parseInt(computerChoiceYellowStone) ;
 
-	$("#sumNum").text(yellowStoneValue);
+	totalSum += yellowStoneValue;
+
+	$("#sumNum").text(totalSum);
+
+if ( totalSum === targetNum) {
+	win ++;
+	$("#score").text("Wins:" + win) ;
+	
+}
+
+else if ( totalSum >= targetNum) {
+
+	lose ++;
+
+	$("#score").text("Losses:" + lose) ;
+}
+
 
 }
 );
+
+console.log(targetNum);
+console.log(totalSum);
+
+
 
