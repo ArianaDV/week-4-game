@@ -12,7 +12,6 @@ var totalSum = 0;
 
 
 
-
 //Displays target number
 
 targetNum = Math.floor(Math.random() * 100) + 1 ;
@@ -42,21 +41,34 @@ $("#ruby").on("click", function() {
 
 	if ( totalSum === targetNum) {
 	win ++;
+
+	reset ();
+
 	$("#score").text("Wins:" + win) ;
+
+	targetNum = Math.floor(Math.random() * 100) + 1 ;
+
+	$("#randomNum").text(targetNum);
+
 	
-}
+	}
 
 else if ( totalSum >= targetNum) {
 
 	lose ++;
 
+	reset ();
+
 	$("#score").text("Losses:" + lose) ;
-}
 
-}
+	targetNum = Math.floor(Math.random() * 100) + 1 ;
+
+	$("#randomNum").text(targetNum);
+
+	}
+
+	}
 );
-
-
 
 
 
@@ -70,7 +82,16 @@ $("#diamond").on("click", function() {
 
 	if ( totalSum === targetNum) {
 	win ++;
+
+	reset ();
+
 	$("#score").text("Wins:" + win) ;
+
+	targetNum = Math.floor(Math.random() * 100) + 1 ;
+
+	$("#randomNum").text(targetNum);
+
+	
 	
 }
 
@@ -78,7 +99,15 @@ else if ( totalSum >= targetNum) {
 
 	lose ++;
 
+	reset ();
+
 	$("#score").text("Losses:" + lose) ;
+
+	targetNum = Math.floor(Math.random() * 100) + 1 ;
+
+	$("#randomNum").text(targetNum);
+
+	
 }
 
 }
@@ -95,7 +124,16 @@ $("#emerald").on("click", function() {
 
 	if ( totalSum === targetNum) {
 	win ++;
+
+	reset ();
+
 	$("#score").text("Wins:" + win) ;
+
+	targetNum = Math.floor(Math.random() * 100) + 1 ;
+
+	$("#randomNum").text(targetNum);
+
+	
 	
 }
 
@@ -103,7 +141,15 @@ else if ( totalSum >= targetNum) {
 
 	lose ++;
 
+	reset ();
+
 	$("#score").text("Losses:" + lose) ;
+
+	targetNum = Math.floor(Math.random() * 100) + 1 ;
+
+	$("#randomNum").text(targetNum);
+
+	
 }
 
 }
@@ -120,7 +166,16 @@ $("#yellowStone").on("click", function() {
 
 if ( totalSum === targetNum) {
 	win ++;
+
+	reset ();
+
 	$("#score").text("Wins:" + win) ;
+
+	targetNum = Math.floor(Math.random() * 100) + 1 ;
+
+	$("#randomNum").text(targetNum);
+
+	
 	
 }
 
@@ -128,15 +183,29 @@ else if ( totalSum >= targetNum) {
 
 	lose ++;
 
+	reset ();
+
 	$("#score").text("Losses:" + lose) ;
+
+	targetNum = Math.floor(Math.random() * 100) + 1 ;
+
+	$("#randomNum").text(targetNum);
+
+	
 }
 
 
 }
 );
 
-console.log(targetNum);
-console.log(totalSum);
+function reset() {
 
+	totalSum = 0;
+}
 
+$("#clear").on("click", function() {
+
+	$("#sumNum").text("0");
+ 
+} );
 
